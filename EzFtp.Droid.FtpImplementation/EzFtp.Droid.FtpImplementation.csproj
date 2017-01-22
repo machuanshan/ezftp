@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82A244F2-2640-44D3-829C-F70857E8DBBE}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EzFtp.Droid.FtpImplementation</RootNamespace>
+    <AssemblyName>EzFtp.Droid.FtpImplementation</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\AlloCommand.cs" />
+    <Compile Include="Commands\AppendCommand.cs" />
+    <Compile Include="Commands\CwdCommand.cs" />
+    <Compile Include="Commands\DeleCommand.cs" />
+    <Compile Include="Commands\FtpCommand.cs" />
+    <Compile Include="Commands\ListCommand.cs" />
+    <Compile Include="Commands\ListCommandBase.cs" />
+    <Compile Include="Commands\MakeDirCommand.cs" />
+    <Compile Include="Commands\NlstCommand.cs" />
+    <Compile Include="Commands\NoopCommand.cs" />
+    <Compile Include="Commands\OptsCommand.cs" />
+    <Compile Include="Commands\PasswordCommand.cs" />
+    <Compile Include="Commands\PasvCommand.cs" />
+    <Compile Include="Commands\PortCommand.cs" />
+    <Compile Include="Commands\PwdCommand.cs" />
+    <Compile Include="Commands\QuitCommand.cs" />
+    <Compile Include="Commands\RemoveDirCommand.cs" />
+    <Compile Include="Commands\RenameCompleteCommand.cs" />
+    <Compile Include="Commands\RenameStartCommand.cs" />
+    <Compile Include="Commands\RetrCommand.cs" />
+    <Compile Include="Commands\SizeCommand.cs" />
+    <Compile Include="Commands\StoreCommand.cs" />
+    <Compile Include="Commands\TypeCommand.cs" />
+    <Compile Include="Commands\UserCommand.cs" />
+    <Compile Include="Common\FtpCommandAttribute.cs" />
+    <Compile Include="Common\FtpSettings.cs" />
+    <Compile Include="Common\TcpClientExtension.cs" />
+    <Compile Include="Commands\UnknownCommand.cs" />
+    <Compile Include="FtpConnection.cs" />
+    <Compile Include="FtpConnectionHandler.cs" />
+    <Compile Include="FtpReplySocket.cs" />
+    <Compile Include="FtpServer.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EzFtp.Common\EzFtp.Common.csproj">
+      <Project>{250a4236-51a7-4b31-b5de-15b049186935}</Project>
+      <Name>EzFtp.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

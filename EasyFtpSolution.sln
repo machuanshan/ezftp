@@ -1,0 +1,144 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFtp", "EasyFtp\EasyFtp.csproj", "{4BC79C48-29A6-473D-9818-F31BF80B9A30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyFtp.FtpImplementation", "EasyFtp.FtpImplementation\EasyFtp.FtpImplementation.csproj", "{E285A105-7005-4775-BE76-968E9A9B11FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzFtp", "EzFtp\EzFtp\EzFtp.csproj", "{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzFtp.Droid", "EzFtp\EzFtp.Droid\EzFtp.Droid.csproj", "{3D449213-6A4C-404D-BBF5-0B3C8EF95663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzFtp.FileAPI", "EzFtp\EzFtp.FileAPI\EzFtp.FileAPI.csproj", "{67F9D3A8-F71E-4428-913F-C37AE82CDB24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Android", "Android", "{FF92C563-80CA-4A7C-BEE1-70F30C5EEFCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzFtp.Common", "EzFtp\EzFtp.Common\EzFtp.Common.csproj", "{250A4236-51A7-4B31-B5DE-15B049186935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzFtp.Droid.Common", "EzFtp\EzFtp.Droid.Common\EzFtp.Droid.Common.csproj", "{83F684A8-A83D-4911-9D05-5A774E7B2DF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EzFtp.Droid.FtpImplementation", "EzFtp\EzFtp.Droid.FtpImplementation\EzFtp.Droid.FtpImplementation.csproj", "{82A244F2-2640-44D3-829C-F70857E8DBBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Debug|x86.Build.0 = Debug|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Release|x86.ActiveCfg = Release|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Release|x86.Build.0 = Release|Any CPU
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30}.Release|x86.Deploy.0 = Release|Any CPU
+		{E285A105-7005-4775-BE76-968E9A9B11FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E285A105-7005-4775-BE76-968E9A9B11FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E285A105-7005-4775-BE76-968E9A9B11FD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E285A105-7005-4775-BE76-968E9A9B11FD}.Debug|x86.Build.0 = Debug|Any CPU
+		{E285A105-7005-4775-BE76-968E9A9B11FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E285A105-7005-4775-BE76-968E9A9B11FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E285A105-7005-4775-BE76-968E9A9B11FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{E285A105-7005-4775-BE76-968E9A9B11FD}.Release|x86.Build.0 = Release|Any CPU
+		{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}.Debug|x86.Build.0 = Debug|Any CPU
+		{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}.Release|x86.ActiveCfg = Release|Any CPU
+		{8F210DCA-C2F5-493D-8A4D-511DA3A56F7C}.Release|x86.Build.0 = Release|Any CPU
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Debug|x86.ActiveCfg = Debug|x86
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Debug|x86.Build.0 = Debug|x86
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Debug|x86.Deploy.0 = Debug|x86
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Release|x86.ActiveCfg = Release|x86
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Release|x86.Build.0 = Release|x86
+		{3D449213-6A4C-404D-BBF5-0B3C8EF95663}.Release|x86.Deploy.0 = Release|x86
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Debug|x86.Build.0 = Debug|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|x86.ActiveCfg = Release|Any CPU
+		{67F9D3A8-F71E-4428-913F-C37AE82CDB24}.Release|x86.Build.0 = Release|Any CPU
+		{250A4236-51A7-4B31-B5DE-15B049186935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250A4236-51A7-4B31-B5DE-15B049186935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250A4236-51A7-4B31-B5DE-15B049186935}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{250A4236-51A7-4B31-B5DE-15B049186935}.Debug|x86.Build.0 = Debug|Any CPU
+		{250A4236-51A7-4B31-B5DE-15B049186935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250A4236-51A7-4B31-B5DE-15B049186935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250A4236-51A7-4B31-B5DE-15B049186935}.Release|x86.ActiveCfg = Release|Any CPU
+		{250A4236-51A7-4B31-B5DE-15B049186935}.Release|x86.Build.0 = Release|Any CPU
+		{83F684A8-A83D-4911-9D05-5A774E7B2DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83F684A8-A83D-4911-9D05-5A774E7B2DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83F684A8-A83D-4911-9D05-5A774E7B2DF4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{83F684A8-A83D-4911-9D05-5A774E7B2DF4}.Debug|x86.Build.0 = Debug|Any CPU
+		{83F684A8-A83D-4911-9D05-5A774E7B2DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83F684A8-A83D-4911-9D05-5A774E7B2DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83F684A8-A83D-4911-9D05-5A774E7B2DF4}.Release|x86.ActiveCfg = Release|Any CPU
+		{83F684A8-A83D-4911-9D05-5A774E7B2DF4}.Release|x86.Build.0 = Release|Any CPU
+		{82A244F2-2640-44D3-829C-F70857E8DBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82A244F2-2640-44D3-829C-F70857E8DBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82A244F2-2640-44D3-829C-F70857E8DBBE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{82A244F2-2640-44D3-829C-F70857E8DBBE}.Debug|x86.Build.0 = Debug|Any CPU
+		{82A244F2-2640-44D3-829C-F70857E8DBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82A244F2-2640-44D3-829C-F70857E8DBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82A244F2-2640-44D3-829C-F70857E8DBBE}.Release|x86.ActiveCfg = Release|Any CPU
+		{82A244F2-2640-44D3-829C-F70857E8DBBE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4BC79C48-29A6-473D-9818-F31BF80B9A30} = {FF92C563-80CA-4A7C-BEE1-70F30C5EEFCF}
+		{E285A105-7005-4775-BE76-968E9A9B11FD} = {FF92C563-80CA-4A7C-BEE1-70F30C5EEFCF}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://clickstone.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EasyFtp.FtpImplementation\\EasyFtp.FtpImplementation.csproj
+		SccProjectTopLevelParentUniqueName1 = EasyFtpSolution.sln
+		SccProjectName1 = EasyFtp.FtpImplementation
+		SccLocalPath1 = EasyFtp.FtpImplementation
+		SccProjectUniqueName2 = EasyFtp\\EasyFtp.csproj
+		SccProjectTopLevelParentUniqueName2 = EasyFtpSolution.sln
+		SccProjectName2 = EasyFtp
+		SccLocalPath2 = EasyFtp
+		SccProjectUniqueName3 = EzFtp\\EzFtp\\EzFtp.csproj
+		SccProjectName3 = EzFtp/EzFtp
+		SccLocalPath3 = EzFtp\\EzFtp
+		SccProjectUniqueName4 = EzFtp\\EzFtp.Droid\\EzFtp.Droid.csproj
+		SccProjectName4 = EzFtp/EzFtp.Droid
+		SccLocalPath4 = EzFtp\\EzFtp.Droid
+		SccProjectUniqueName5 = EzFtp.FileAPI\\EzFtp.FileAPI.csproj
+		SccProjectName5 = EzFtp.FileAPI
+		SccLocalPath5 = EzFtp.FileAPI
+		SccProjectUniqueName6 = EzFtp\\EzFtp.Common\\EzFtp.Common.csproj
+		SccProjectName6 = EzFtp/EzFtp.Common
+		SccLocalPath6 = EzFtp\\EzFtp.Common
+		SccProjectUniqueName7 = EzFtp\\EzFtp.Droid.Common\\EzFtp.Droid.Common.csproj
+		SccProjectName7 = EzFtp/EzFtp.Droid.Common
+		SccLocalPath7 = EzFtp\\EzFtp.Droid.Common
+		SccProjectUniqueName8 = EzFtp\\EzFtp.Droid.FtpImplementation\\EzFtp.Droid.FtpImplementation.csproj
+		SccProjectName8 = EzFtp/EzFtp.Droid.FtpImplementation
+		SccLocalPath8 = EzFtp\\EzFtp.Droid.FtpImplementation
+	EndGlobalSection
+EndGlobal

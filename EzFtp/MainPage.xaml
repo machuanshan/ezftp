@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EzFtp"
+             xmlns:res="clr-namespace:EzFtp.Properties"
+             Title="{x:Static res:Resources.MainTitle}"
+             x:Class="EzFtp.MainPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:InverseBoolConverter x:Key="InverseBoolConverter"/>
+      
+      <DataTemplate x:Key="DiskTemplate">
+        <ImageCell ImageSource="{Binding Icon}"
+                   Text="{Binding LocalizedName}">
+        </ImageCell>
+      </DataTemplate>
+      <DataTemplate x:Key="DirectoryTemplate">
+        <ImageCell ImageSource="{Binding Icon}"
+                   Text="{Binding LocalizedName}">
+        </ImageCell>
+      </DataTemplate>
+      <DataTemplate x:Key="FileTemplate">
+        <ImageCell ImageSource="{Binding Icon}"
+                   Text="{Binding Name}">
+        </ImageCell>
+      </DataTemplate>
+      <local:DiskItemDataTemplateSelector x:Key="DTSDiskItem" 
+                                          DiskTemplate="{StaticResource DiskTemplate}"
+                                          DirectoryTemplate="{StaticResource DirectoryTemplate}"
+                                          FileTemplate="{StaticResource FileTemplate}"/>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <StackLayout Spacing="0">
+    <ScrollView x:Name="_svPathPanel" 
+                Orientation="Horizontal">
+      <StackLayout x:Name="_pathPanel"
+                   BackgroundColor="#FFEEEEEE"
+                   Orientation="Horizontal"
+                   HeightRequest="60"
+                   Padding="10,0,10,0"/>  
+    </ScrollView>
+    
+    <ListView x:Name="_listView"
+              VerticalOptions="FillAndExpand"
+              ItemsSource="{Binding Path=DiskItems}"
+              ItemTemplate="{StaticResource DTSDiskItem}"
+              SelectedItem="{Binding Path=SelectedItem}"
+              ItemTapped="OnItemTapped"
+              Margin="10,0,10,0">
+    </ListView>
+
+    <Button Text="{x:Static res:Resources.BtnTextStartFtp}" 
+            Command="{Binding StartServiceCommand}"
+            BackgroundColor="Green"
+            BorderColor="Silver"
+            BorderRadius="10" 
+            TextColor="White"
+            IsVisible="{Binding Path=IsStarted, Converter={StaticResource InverseBoolConverter}}"/>
+    <StackLayout IsVisible="{Binding Path=IsStarted}">
+      <Button Text="{x:Static res:Resources.BtnTextStopFtp}"
+              Command="{Binding StopServiceCommand}"
+              BorderColor="Red"
+              BorderRadius="10"
+              TextColor="White"/>
+      <Label Text="{Binding Path=FtpAddress}"/>
+    </StackLayout>
+  </StackLayout>
+
+</ContentPage>
