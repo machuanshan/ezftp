@@ -20,7 +20,7 @@ namespace EzFtp.Droid.FtpImplementation
     public bool Started { get; private set; } = false;
     public string FtpAddress
     {
-      get { return $"{FtpSettings.LocalAddress}:{FtpSettings.Port}"; }
+      get { return $"ftp://{FtpSettings.LocalAddress}:{FtpSettings.Port}"; }
     }
 
     public FtpServer()

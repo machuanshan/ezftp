@@ -26,6 +26,8 @@ namespace EzFtp.Droid
 
       Locator.Register<INetworkManager>(new NetworkManager(this));
       Locator.Register<IFtpDroidService>(new FtpDroidService(this));
+      Locator.Register<INotificationManager>(new DroidNotificationManager(this));
+
       LoadApplication(new App());
     }
   }

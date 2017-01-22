@@ -126,4 +126,10 @@
   <data name="SDCardStroage" xml:space="preserve">
     <value>SD Card</value>
   </data>
+  <data name="ServerRunningTitle" xml:space="preserve">
+    <value>FTP Server Is Running</value>
+  </data>
+  <data name="StopFtpServer" xml:space="preserve">
+    <value>Stop Ftp Server</value>
+  </data>
 </root>

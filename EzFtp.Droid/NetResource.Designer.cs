@@ -86,5 +86,23 @@ namespace EzFtp.Droid {
                 return ResourceManager.GetString("SDCardStroage", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FTP Server Is Running.
+        /// </summary>
+        internal static string ServerRunningTitle {
+            get {
+                return ResourceManager.GetString("ServerRunningTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stop Ftp Server.
+        /// </summary>
+        internal static string StopFtpServer {
+            get {
+                return ResourceManager.GetString("StopFtpServer", resourceCulture);
+            }
+        }
     }
 }

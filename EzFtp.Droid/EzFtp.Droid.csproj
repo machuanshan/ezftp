@@ -143,6 +143,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Implementations\FtpDroidService.cs" />
+    <Compile Include="Implementations\DroidNotificationManager.cs" />
     <Compile Include="Implementations\NetworkManager.cs" />
     <Compile Include="Implementations\StorageService.cs" />
     <Compile Include="MainActivity.cs" />

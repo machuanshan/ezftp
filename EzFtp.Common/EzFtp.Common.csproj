@@ -43,6 +43,7 @@
     <Compile Include="IFtpDroidService.cs" />
     <Compile Include="IFtpServer.cs" />
     <Compile Include="INetworkManager.cs" />
+    <Compile Include="INotificationManager.cs" />
     <Compile Include="Logging\LogEntry.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\Severity.cs" />

@@ -11,12 +11,15 @@ namespace EzFtp
   public partial class App : Application
   {
     private IFtpDroidService _fptDroidServer;
+    private INotificationManager _nm;
 
     public App()
     {
       InitializeComponent();
 
       _fptDroidServer = Locator.Resolve<IFtpDroidService>();
+      _nm = Locator.Resolve<INotificationManager>();
+
       MainPage = new NavigationPage(new MainPage());
     }
 
@@ -29,6 +32,11 @@ namespace EzFtp
     protected override void OnSleep()
     {
       _fptDroidServer.Detach();
+
+      if(_fptDroidServer.Server.Started)
+      {
+        _nm.SendFtpRunningNotification(_fptDroidServer.Server.FtpAddress);
+      }
     }
 
     protected override void OnResume()

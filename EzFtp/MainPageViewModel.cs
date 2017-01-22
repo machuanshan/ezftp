@@ -51,11 +51,7 @@ namespace EzFtp
 
     public string FtpAddress
     {
-      get
-      {
-        var addr = _droidSvc.Server?.FtpAddress;
-        return string.IsNullOrEmpty(addr) ? string.Empty : $"ftp://{addr}";
-      }
+      get{ return _droidSvc.Server?.FtpAddress; }
     }
 
     public MainPage View { get; set; }
