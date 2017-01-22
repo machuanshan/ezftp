@@ -43,7 +43,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Base\ViewModelBase.cs" />
-    <Compile Include="Converters\InverseBoolConverter.cs" />
+    <Compile Include="Converters\BoolConverter.cs" />
     <Compile Include="DTS\DiskItemDataTemplateSelector.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>

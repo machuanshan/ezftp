@@ -126,6 +126,12 @@
   <data name="BtnTextStopFtp" xml:space="preserve">
     <value>Stop Ftp Service</value>
   </data>
+  <data name="CD" xml:space="preserve">
+    <value>Current Directory:</value>
+  </data>
+  <data name="FTPAddr" xml:space="preserve">
+    <value>FTP Address:</value>
+  </data>
   <data name="InvalidConnection" xml:space="preserve">
     <value>No valid WiFi connection</value>
   </data>

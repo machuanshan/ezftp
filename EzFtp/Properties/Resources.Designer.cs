@@ -89,6 +89,24 @@ namespace EzFtp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current Directory:.
+        /// </summary>
+        internal static string CD {
+            get {
+                return ResourceManager.GetString("CD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to FTP Address:.
+        /// </summary>
+        internal static string FTPAddr {
+            get {
+                return ResourceManager.GetString("FTPAddr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No valid WiFi connection.
         /// </summary>
         internal static string InvalidConnection {

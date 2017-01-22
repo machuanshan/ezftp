@@ -7,7 +7,8 @@
              x:Class="EzFtp.MainPage">
   <ContentPage.Resources>
     <ResourceDictionary>
-      <local:InverseBoolConverter x:Key="InverseBoolConverter"/>
+      <local:BoolConverter x:Key="InverseBoolConverter" IsInversed="true"/>
+      <local:BoolConverter x:Key="BoolConverter"/>
       
       <DataTemplate x:Key="DiskTemplate">
         <ImageCell ImageSource="{Binding Icon}"
@@ -30,25 +31,24 @@
                                           FileTemplate="{StaticResource FileTemplate}"/>
     </ResourceDictionary>
   </ContentPage.Resources>
-  <StackLayout Spacing="0">
+  <StackLayout Padding="10,0,10,0">
     <ScrollView x:Name="_svPathPanel" 
                 Orientation="Horizontal">
       <StackLayout x:Name="_pathPanel"
                    BackgroundColor="#FFEEEEEE"
                    Orientation="Horizontal"
-                   HeightRequest="60"
-                   Padding="10,0,10,0"/>  
+                   HeightRequest="60"/>  
     </ScrollView>
-    
+    <BoxView Color="Gray" HeightRequest="1"/>
     <ListView x:Name="_listView"
               VerticalOptions="FillAndExpand"
               ItemsSource="{Binding Path=DiskItems}"
               ItemTemplate="{StaticResource DTSDiskItem}"
               SelectedItem="{Binding Path=SelectedItem}"
-              ItemTapped="OnItemTapped"
-              Margin="10,0,10,0">
+              ItemTapped="OnItemTapped">
     </ListView>
 
+    <BoxView Color="Gray" HeightRequest="1"/>
     <Button Text="{x:Static res:Resources.BtnTextStartFtp}" 
             Command="{Binding StartServiceCommand}"
             BackgroundColor="Green"
@@ -56,13 +56,24 @@
             BorderRadius="10" 
             TextColor="White"
             IsVisible="{Binding Path=IsStarted, Converter={StaticResource InverseBoolConverter}}"/>
-    <StackLayout IsVisible="{Binding Path=IsStarted}">
+    
+    <StackLayout IsVisible="{Binding Path=IsStarted, Converter={StaticResource BoolConverter}}">
+
+      <StackLayout Orientation="Horizontal">
+        <Label Text="{x:Static res:Resources.CD}" WidthRequest="100"/>
+        <Label Text="{Binding Path=CurrentDirectory.LocalizedName}"/>
+      </StackLayout>
+
+      <StackLayout Orientation="Horizontal">
+        <Label Text="{x:Static res:Resources.FTPAddr}" WidthRequest="100"/>
+        <Label Text="{Binding Path=FtpAddress}"/>
+      </StackLayout>
+
       <Button Text="{x:Static res:Resources.BtnTextStopFtp}"
               Command="{Binding StopServiceCommand}"
-              BorderColor="Red"
+              BackgroundColor="Red"              
               BorderRadius="10"
-              TextColor="White"/>
-      <Label Text="{Binding Path=FtpAddress}"/>
+              TextColor="White"/>     
     </StackLayout>
   </StackLayout>
 

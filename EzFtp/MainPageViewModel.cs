@@ -1,14 +1,11 @@
-﻿using EzFtp.FileAPI;
-using EzFtp.Common;
+﻿using EzFtp.Common;
+using EzFtp.FileAPI;
+using EzFtp.Properties;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
 using System.Windows.Input;
-using EzFtp.Properties;
+using Xamarin.Forms;
 
 namespace EzFtp
 {
@@ -18,8 +15,7 @@ namespace EzFtp
     private INetworkManager _nm;
     private IFtpDroidService _droidSvc;
     private DiskItem _selectedItem;
-    private bool _isStarted;
-    private string _ftpAddress;
+    private RelativeDirectory _currentDirectory;
 
     public Stack<DiskItem> DirectoryStack { get;  }
 
@@ -38,23 +34,27 @@ namespace EzFtp
       }
     }
 
-    public bool IsStarted
+    public RelativeDirectory CurrentDirectory
     {
-      get { return _isStarted; }
+      get { return _currentDirectory; }
       set
       {
-        _isStarted = true;
+        _currentDirectory = value;
         OnPropertyChanged();
       }
     }
 
+    public bool? IsStarted
+    {
+      get { return _droidSvc.Server?.Started; }
+    }
+
     public string FtpAddress
     {
-      get { return _ftpAddress; }
-      set
+      get
       {
-        _ftpAddress = value;
-        OnPropertyChanged();
+        var addr = _droidSvc.Server?.FtpAddress;
+        return string.IsNullOrEmpty(addr) ? string.Empty : $"ftp://{addr}";
       }
     }
 
@@ -62,9 +62,10 @@ namespace EzFtp
 
     public MainPageViewModel()
     {
-      _ss = DependencyService.Get<IStorageService>(DependencyFetchTarget.GlobalInstance);
+      _ss = DependencyService.Get<IStorageService>(DependencyFetchTarget.GlobalInstance);      
       _nm = Locator.Resolve<INetworkManager>();
       _droidSvc = Locator.Resolve<IFtpDroidService>();
+      _droidSvc.Attached += OnServiceAttached;
 
       DiskItems = new ObservableCollection<DiskItem>();
       DirectoryStack = new Stack<DiskItem>();
@@ -74,14 +75,19 @@ namespace EzFtp
 
     public void Initialize()
     {
-      OpenDiskItem(_ss.Root);
+      OpenDiskItem(_ss.Root);      
+    }
+
+    private void OnServiceAttached(object sender, EventArgs e)
+    {
+      OnPropertyChanged("IsStarted");
+      OnPropertyChanged("FtpAddress");
     }
 
     private void OnStopServiceCommand()
     {
       _droidSvc.Server.Stop();
-      IsStarted = _droidSvc.Server.Started;
-      FtpAddress = _droidSvc.Server.FtpAddress;
+      OnPropertyChanged("IsStarted");
     }
 
     private void OnStartServiceCommand()
@@ -91,10 +97,10 @@ namespace EzFtp
         View.DisplayAlert(Resources.BtnTextStartFtp, Resources.InvalidConnection, Resources.AlertCancelText);
         return;
       }
-      
+
+      CurrentDirectory = DirectoryStack.Peek() as RelativeDirectory;
       _droidSvc.Server.Start();
-      IsStarted = _droidSvc.Server.Started;
-      FtpAddress = _droidSvc.Server.FtpAddress;
+      OnPropertyChanged("IsStarted");
     }
 
     public bool GoBack()
@@ -121,7 +127,7 @@ namespace EzFtp
       DiskItems.Clear();
       DiskItems.AddRange(children);
       DirectoryStack.Push(diskItem);
-      View.DisplayCurrentPath();
+      View.DisplayCurrentPath();      
     }
   }
 }
